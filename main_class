@@ -1,11 +1,10 @@
 class home(object):
-  def __int__(self, name, count_people):
+  def __init__(self, name, count_people):
         self.count_people = count_people
         self.name = name
   def change_count_people(self, new_count):
         self.count_people = new_count
         
 if __name__ == '__main__':
-  home = home('fool', 5)
-  prinmt(home.count(people))
-  
+  homes = home('fool', 5)
+  print(homes.count_people)
