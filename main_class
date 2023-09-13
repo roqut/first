@@ -10,7 +10,8 @@ passport_data, date_birth, address, city, c_phone):
         s.address = address
         s.city = city
         s.c_phone = c_phone
-
+    def change_phone(self, new_phone):
+        self.c_phone = new_phone
 class c_boarding_houses: #Сущность пансионаты
     def __init__(s, name_boarding, address_boarding, city_boarding, country, phone, description, free_rooms, availability_pool, medical_services, spa,  house_level, distance_sea):
         s.name_boarding = name_boarding
@@ -25,7 +26,8 @@ class c_boarding_houses: #Сущность пансионаты
         s.spa = spa
         s.house_level = house_level
         s.distance_sea = distance_sea
-
+    def free_r(self, count):
+        self.free_rooms += count
 class c_travel_packages: #Сущность путевки
     def __init__(s, client, boarding_h, type, date_departure, date_the_star, baby, medical_insurance, amount_people, price, summa):
         s.client  = client
@@ -38,7 +40,8 @@ class c_travel_packages: #Сущность путевки
         s.amount_people = amount_people
         s.price = price
         s.summa = summa
-
+    def days(self, x, y, z):
+        print(f'Кол-во прожитых дней по путевке {z}: {int(x[0:2]) - int(y[0:2])}')
 class c_tours: #Сущность туры
     def __init__(s, name_tour, type_car, category_house, type_food, price_tour):
         s.name_tour = name_tour
@@ -46,7 +49,10 @@ class c_tours: #Сущность туры
         s.category_house = category_house
         s.type_food = type_food
         s.price_tour = price_tour
-
+    def change_type_car(self, typeCar):
+        self.type_car = typeCar
+    def change_price_tour(self, new_price):
+        self.price_tour = new_price
 class c_view_house: #Сущность вид жилья
     def __init__(s, name_house, housing_category, pansionat, description_living, price_room):
         s.name_house = name_house
@@ -54,3 +60,5 @@ class c_view_house: #Сущность вид жилья
         s.pansionat = pansionat
         s.description_living = description_living
         s.price_room = price_room
+    def price_r(self, price):
+        self.price_room = price
