@@ -1,10 +1,56 @@
-class home(object):
-  def __init__(self, name, count_people):
-        self.count_people = count_people
-        self.name = name
-  def change_count_people(self, new_count):
-        self.count_people = new_count
-        
-if __name__ == '__main__':
-  homes = home('fool', 5)
-  print(homes.count_people)
+#Информационная система туристического агентства
+class c_clients: #Сущность клиенты
+    def __init__(s, surname, first_name, patronymic,
+passport_data, date_birth, address, city, c_phone):
+        s.surname = surname
+        s.first_name = first_name
+        s.patronymic = patronymic
+        s.passport_data = passport_data
+        s.date_birth = date_birth
+        s.address = address
+        s.city = city
+        s.c_phone = c_phone
+
+class c_boarding_houses: #Сущность пансионаты
+    def __init__(s, name_boarding, address_boarding, city_boarding, country, phone, description, free_rooms, availability_pool, medical_services, spa,  house_level, distance_sea):
+        s.name_boarding = name_boarding
+        s.address_boarding = address_boarding
+        s.city_boarding = city_boarding
+        s.country = country
+        s.phone = phone
+        s.description = description
+        s.free_rooms = free_rooms
+        s.availability_pool = availability_pool
+        s.medical_services = medical_services
+        s.spa = spa
+        s.house_level = house_level
+        s.distance_sea = distance_sea
+
+class c_travel_packages: #Сущность путевки
+    def __init__(s, client, boarding_h, type, date_departure, date_the_star, baby, medical_insurance, amount_people, price, summa):
+        s.client  = client
+        s.boarding_h = boarding_h
+        s.type = type
+        s.date_departure = date_departure
+        s.date_the_star = date_the_star
+        s.baby = baby
+        s.medical_insurance = medical_insurance
+        s.amount_people = amount_people
+        s.price = price
+        s.summa = summa
+
+class c_tours: #Сущность туры
+    def __init__(s, name_tour, type_car, category_house, type_food, price_tour):
+        s.name_tour = name_tour
+        s.type_car = type_car
+        s.category_house = category_house
+        s.type_food = type_food
+        s.price_tour = price_tour
+
+class c_view_house: #Сущность вид жилья
+    def __init__(s, name_house, housing_category, pansionat, description_living, price_room):
+        s.name_house = name_house
+        s.housing_category = housing_category
+        s.pansionat = pansionat
+        s.description_living = description_living
+        s.price_room = price_room
